@@ -1,0 +1,1 @@
+# Tvořte úspěšný, ne dokonalý produkt.
