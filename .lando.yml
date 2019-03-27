@@ -1,0 +1,5 @@
+name: pavolhejny-talks
+recipe: lamp
+config:
+  php: '7.2'
+  webroolt: .

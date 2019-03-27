@@ -1,0 +1,26 @@
+{
+  "name": "talks",
+  "version": "0.1.0",
+  "description": "Presentations for my (me@pavolhejny.com) talks on conferences and meetups.",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "lando start",
+    "stop": "lando stop",
+    "prettier": "prettier --config .prettierrc --write \"src/**/*.{js,php,css,html}\"",
+    "prettier-watch": "onchange \"**/*\" -- npm run prettier"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:hejny/talks.git"
+  },
+  "author": "Pavol Hejný",
+  "license": "ISC",
+  "homepage": "https://talks.pavolhejny.com",
+  "devDependencies": {
+    "@prettier/plugin-php": "github:prettier/plugin-php",
+    "prettier": "github:prettier/prettier",
+    "onchange": "^3.3.0"
+  }
+}
