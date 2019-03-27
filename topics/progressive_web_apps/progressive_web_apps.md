@@ -1,0 +1,3 @@
+# Progressive Web Apps
+
+Vyvíjet mobilní a webovou aplikaci jako jeden projekt je docela běžné. Obvyklý postup je ten, že s v JavaScriptu napíše aplikace a ta se zabalí do mobilní např. pomocí WebView či React Native. Já bych rád ukázal přístup, kdy se vyrobí webová aplikace, která má většinu funkcí mobilní aplikace - ikonka na ploše, fungování bez internetu, využití fotoaparátu, posílání upozornění,... ale zůstává webovou aplikací se všemi jejími výhodami - nemusí se instalovat, dá se do ni jednoduše odkazovat...
