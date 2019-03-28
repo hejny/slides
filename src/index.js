@@ -4,9 +4,9 @@ async function main() {
     const id = getParameter('id');
 
     try {
-        const content = await fetchTalk(id);
+        let content = await fetchTalk(id);
 
-        console.log('content', content);
+        content = content.split(/-{3,}/gm).join('---');
 
         document.getElementById('source').innerHTML = content;
         /*const slideshow = */
@@ -15,11 +15,16 @@ async function main() {
         });
 
         postprocessRemark();
+
+        document.title = document.querySelector(
+            '.remark-slide-container h1',
+        ).innerText;
     } catch (error) {
         const indexMarkdown = await fetchContentFile('index.md');
         const indexHtml = markdown.toHTML(indexMarkdown);
 
         document.getElementById('index').innerHTML = indexHtml;
+        document.getElementById('source').style.display = 'none';
     }
 }
 

@@ -1,6 +1,10 @@
 body {
     font-family: 'Roboto Condensed', sans-serif;
     /*
+
+     font-family: 'Permanent Marker', cursive;
+
+
      font-family: 'Signika', sans-serif;
      font-family: 'Archivo Narrow', sans-serif;
      font-family: 'Pathway Gothic One', sans-serif;
@@ -14,21 +18,21 @@ body {
 .remark-slides-area {
     background-color: black;
 }
-h1 {
+.remark-slides-area h1 {
     margin-top: 100px;
     /*Align content to middle*/
 }
-h1,
-h2,
-h3 {
+.remark-slides-area h1,
+.remark-slides-area h2,
+.remark-slides-area h3 {
     font-weight: normal;
     margin-bottom: 0;
 }
-h1,
-h2,
-h3,
-a {
-    background: linear-gradient(to left, #ffbc6f, #f7ff8e);
+.remark-slides-area h1,
+.remark-slides-area h2,
+.remark-slides-area h3,
+.remark-slides-area a {
+    background: linear-gradient(to left, #fff, #fff);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -41,14 +45,14 @@ a {
     display: inline-block;
     background-clip: inherit;
     -webkit-text-fill-color: inherit;
-    background-image: linear-gradient(to left, #111, #111);
-    box-shadow: #272822 0 0 5px;
+    background-image: linear-gradient(to left, #f7720c, #f7720c);
+    box-shadow: #888 0 0 5px;
 }
 .remark-slide-content-with-image h1 .inner {
     padding: 30px;
     padding-left: 50px;
     padding-right: 50px;
-    background: linear-gradient(to left, #ffbc6f, #f7ff8e);
+    background: linear-gradient(to left, #fff, #fff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -74,7 +78,7 @@ a {
     margin-top: -50px;
     height: calc(100% + 50px);
 }
-iframe {
+.remark-slides-area iframe {
     border: none;
 }
 .remark-slide-content-with-sample-background iframe {
@@ -93,7 +97,8 @@ iframe {
 .remark-slide-content {
     color: white;
     text-align: center;
-    background: url('/images/patterns/patt-10.png');
+    /*background: url('/images/patterns/patt-10.png');*/
+    background-image: linear-gradient(to bottom, #f7720c, #f7720c);
     background-position: center;
     background-size: 100px;
     background-repeat: repeat;
@@ -103,25 +108,25 @@ iframe {
 /*.remark-slide-content h1 { font-size: 3em; }
    .remark-slide-content h2 { font-size: 2em; }
    .remark-slide-content h3 { font-size: 1.6em; };*/
-.footnote {
+.remark-slides-area .footnote {
     position: absolute;
     bottom: 3em;
 }
-li p {
+.remark-slides-area li p {
     line-height: 1.25em;
 }
-.red {
+.remark-slides-area .red {
     color: #fa0000;
 }
-.large {
+.remark-slides-area .large {
     font-size: 2em;
 }
-a,
-a > code {
+.remark-slides-area a,
+.remark-slides-area a > code {
     border-bottom: 2px solid #303880;
     text-decoration: none;
 }
-code {
+.remark-slides-area code {
     background: #e7e8e2;
     border-radius: 5px;
     text-align: left;
@@ -138,21 +143,21 @@ code {
    display: inline-block;
    }
    */
-img {
+.remark-slides-area img {
     max-width: 100%;
     /*box-shadow: #555 0 0 15px;*/
 }
-ul,
-li {
+.remark-slides-area ul,
+.remark-slides-area li {
     list-style-type: square;
     font-weight: normal;
     text-align: left;
     font-size: 1.5em;
 }
-ul ul {
+.remark-slides-area ul ul {
     font-size: 1rem;
 }
-del {
+.remark-slides-area del {
     color: #888;
 }
 .remark-code,
@@ -162,15 +167,15 @@ del {
 .remark-code-line-highlighted {
     background-color: #373832;
 }
-.pull-left {
+.remark-slides-area .pull-left {
     float: left;
     width: 47%;
 }
-.pull-right {
+.remark-slides-area .pull-right {
     float: right;
     width: 47%;
 }
-.pull-right ~ p {
+.remark-slides-area .pull-right ~ p {
     clear: both;
 }
 #slideshow .slide .content code {
@@ -180,12 +185,12 @@ del {
     font-size: 0.9em;
     padding: 15px;
 }
-.inverse {
+.remark-slides-area .inverse {
     background: #272822;
     color: #ccc;
 }
-.inverse h1,
-.inverse h2 {
+.remark-slides-area .inverse h1,
+.remark-slides-area .inverse h2 {
     color: #f3f3f3;
     line-height: 0.8em;
 }
@@ -225,22 +230,22 @@ del {
     z-index: 0;
 }
 /* Two-column layout */
-.left-column {
+.remark-slides-area .left-column {
     color: #777;
     width: 20%;
     height: 92%;
     float: left;
 }
-.left-column h2:last-of-type,
-.left-column h3:last-child {
+.remark-slides-area .left-column h2:last-of-type,
+.remark-slides-area .left-column h3:last-child {
     color: #000;
 }
-.right-column {
+.remark-slides-area .right-column {
     width: 75%;
     float: right;
     padding-top: 1em;
 }
-footer {
+.remark-slides-area footer {
     font-size: 1rem;
     position: fixed;
     bottom: 1em;
