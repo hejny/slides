@@ -3,6 +3,13 @@
 
 ------------------------
 
+# sss
+
+![](/content/2019/001-asynchronous-javascript/hdd.jpg)
+
+
+------------------------
+
 
 # Synchronous code
 
