@@ -8,7 +8,7 @@
   "scripts": {
     "start": "lando start",
     "stop": "lando stop",
-    "prettier": "prettier --config .prettierrc --write \"src/**/*.{js,php,css,html}\"",
+    "prettier": "prettier --config .prettierrc --write \"{src,content}/**/*.{js,css,html}\"",
     "prettier-watch": "onchange \"**/*\" -- npm run prettier"
   },
   "repository": {

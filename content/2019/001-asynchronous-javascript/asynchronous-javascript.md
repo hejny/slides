@@ -217,48 +217,7 @@ apiQuery('/people', dataLoaded('people'));
 
 # Generator
 
-## todo
-
-```javascript
-
-
-function* loadAllFactory(){
-
-    yield 
-
-
-}
-
-
-const loadAll = loadAllFactory();
-
-
-loadAll.next().value;
-
-
-
-
-function fileLoaded(fileName){
-    return (error, events)=>{
-        if (error){
-            if(!wasError){
-                //error
-                wasError = true;
-            }
-        }else{
-            fileeventss[fileName] = events;
-            filesLoaded++;
-            if(filesLoaded===filesTotal){
-                //fileeventss
-            }
-        }
-    }
-}
-
-apiQuery('/events', fileLoaded('file1'));
-
-```
-
+!import demo/generator.js
 
 ------------------------
 
