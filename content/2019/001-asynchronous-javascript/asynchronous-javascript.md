@@ -3,26 +3,63 @@
 
 ------------------------
 
-# sss
+# CPU vs. I/O
 
 ![](/content/2019/001-asynchronous-javascript/hdd.jpg)
 
 
 ------------------------
 
-
 # Synchronous code
 
+## PHP
 ```php
-$content = file_get_contents('./file.csv');
+$content = file_get_content('file.csv');
 //$content
 ```
 
+## Node.js
 ```javascript
 import {readFileSync} from 'fs';
 
-const content = readFileSync('./file.csv','utf8');
+const content = readFileSync('file.csv', 'utf8');
+
 //content
+```
+
+------------------------
+
+# PHP vs. Node.js
+
+## PHP
+```php
+$content = file_get_content('file.csv');
+//$content
+```
+
+## Node.js
+```javascript
+import {readFile} from 'fs';
+
+readFile('file.csv', 'utf8', (error, events)=>{
+    if (error){
+        //error
+    }else{
+        //events
+    }
+});
+```
+
+------------------------
+
+# API Calls
+
+```javascript
+import { apiQuerySync } from './api';
+
+const events = apiQuerySync('/events');
+
+//events
 ```
 
 ------------------------
@@ -31,30 +68,43 @@ const content = readFileSync('./file.csv','utf8');
 
 
 ```javascript
-import {readFile} from 'fs';
+import { apiQuery } from './api';
 
 
-readFile('./file.csv', 'utf8', (error, content)=>{
+apiQuery('/events', (error, events)=>{
     if (error){
         //error
     }else{
-        //content
+        //events
     }
 });
 ```
 
 ------------------------
 
+```javascript
+import { apiQuerySync } from './api';
+
+const events = apiQuerySync('/events');//100ms
+const people = apiQuerySync('/people');//100ms
+
+//events, people
+```
+
+
+
+------------------------
+
 # Error handling
 
 ```javascript
-import {readFileSync} from 'fs';
+import {apiQuerySync} from './api';
 
 try{
-    const content1 = readFileSync('./file1.csv','utf8');
-    const content2 = readFileSync('./file2.csv','utf8');
+    const events = apiQuerySync('/events');//100ms
+    const people = apiQuerySync('/people');//100ms
     
-    //content1, content2
+    //events, people
 
 }catch(error){
     //error
@@ -67,17 +117,17 @@ try{
 # Callback error handling
 
 ```javascript
-import {readFile} from 'fs';
+import { apiQuery } from './api';
 
-readFile('./file1.csv', 'utf8', (error, content1)=>{
+apiQuery('/events', (error, events)=>{
     if (error){
         //error
     }else{
-        readFile('./file2.csv', 'utf8', (error, content2)=>{
+        apiQuery('/people', (error, people)=>{
             if (error){
                 //error
             }else{
-                //content1, content2
+                //events, people
             }
         });
     }
@@ -86,97 +136,34 @@ readFile('./file1.csv', 'utf8', (error, content1)=>{
 
 ------------------------
 
-# Callback error handling (more functional)
-
-```javascript
-
-acquireConnection('mongodb://db',
-    onLoad(loadUser(writeToFile, errorHandler), errorHandler)
-)
-selectRows
-writeToFile
-
-readFile('./file1.csv', 'utf8', onLoad);
-
-function loadUser(onUser, onError) {
-    return (connection) => {...}
-}
-
-function errorHandler(error) {...}
-
-function contentHandler(content) {...}
-
-function onLoad(onContent, onError) {
-    return (error, content) => error
-        ? onError(error)
-        : onContent(content);
-}
-```
-
-------------------------
-
-# Parallel
-
-```javascript
-import {readFile} from 'fs';
-
-const fileContents = {};
-const filesTotal = 2;
-let filesLoaded = 0;
-let wasError = false;
-
-function fileLoaded(fileName){
-    return (error, content)=>{
-        if (error){
-            if(!wasError){
-                //error
-                wasError = true;
-            }
-        }else{
-            fileContents[fileName] = content;
-            filesLoaded++;
-            if(filesLoaded===filesTotal){
-                //fileContents
-            }
-        }
-    }
-}
-
-readFile('./file1.csv', 'utf8', fileLoaded('file1'));
-readFile('./file2.csv', 'utf8', fileLoaded('file2'));
-
-```
-
-------------------------
-
 # Callback Hell
 
 ```javascript
-readFile('./file1.csv', 'utf8', (error, content1)=>{
+apiQuery('/events', (error, events)=>{
     if (error){
         //error
     }else{
-        readFile('./file2.csv', 'utf8', (error, content2)=>{
+        apiQuery('/people', (error, people)=>{
             if (error){
                 //error
             }else{
-                readFile('./file3.csv', 'utf8', (error, content3)=>{
+                apiQuery('/calendar', (error, calendar)=>{
                     if (error){
                         //error
                     }else{
-                        readFile('./file4.csv', 'utf8', (error, content4)=>{
+                        apiQuery('/posts', (error, posts)=>{
                             if (error){
                                 //error
                             }else{
-                                readFile('./file5.csv', 'utf8', (error, content5)=>{
+                                apiQuery('/profile', (error, profile)=>{
                                     if (error){
                                         //error
                                     }else{
-                                        readFile('./file6.csv', 'utf8', (error, content6)=>{
+                                        apiQuery('/whatever', (error, whatever)=>{
                                             if (error){
                                                 //error
                                             }else{
-                                                //content1,..., content6
+                                                //Here I can use the data
                                             }
                                         });
                                     }
@@ -190,6 +177,40 @@ readFile('./file1.csv', 'utf8', (error, content1)=>{
         });
     }
 }); 
+```
+
+------------------------
+
+# Parallel
+
+```javascript
+import { apiQuery } from './api';
+
+const dataStorage = {};
+const total = 2;
+let loaded = 0;
+let wasError = false;
+
+function dataLoaded(queryName){
+    return (error, data)=>{
+        if (error){
+            if(!wasError){
+                //error
+                wasError = true;
+            }
+        }else{
+            dataStorage[queryName] = data;
+            loaded++;
+            if(loaded===total){
+                //dataStorage
+            }
+        }
+    }
+}
+
+apiQuery('/events', dataLoaded('events'));
+apiQuery('/people', dataLoaded('people'));
+
 ```
 
 ------------------------
@@ -218,58 +239,85 @@ loadAll.next().value;
 
 
 function fileLoaded(fileName){
-    return (error, content)=>{
+    return (error, events)=>{
         if (error){
             if(!wasError){
                 //error
                 wasError = true;
             }
         }else{
-            fileContents[fileName] = content;
+            fileeventss[fileName] = events;
             filesLoaded++;
             if(filesLoaded===filesTotal){
-                //fileContents
+                //fileeventss
             }
         }
     }
 }
 
-readFile('./file1.csv', 'utf8', fileLoaded('file1'));
+apiQuery('/events', fileLoaded('file1'));
 
 ```
 
 
+------------------------
 
+# Promise creation
+
+
+```javascript
+//apiAsync.js
+import { apiQuery } from './api';
+
+export function apiQueryAsync(path){
+    return new Promise((resolve,reject)=>{
+        apiQuery('/events', (error, data)=>{
+            if (error){
+                reject(error);
+            }else{
+                resolve(data);
+            }
+        });
+    })
+}
+```
 
 
 ------------------------
 
-# Promise
+# Promise usage
 
 
 ```javascript
-import { readFile } from 'fs';
-import { promisify } from 'util';
+import { apiQueryAsync } from './apiAsync';
 
-const readFileAsync = promisify(readFile);
-
-const fileContents = {};
+let events, people;
 
 //todo maybe different case
-readFileAsync('./file1.csv','utf8')
-    .then((content)=>{
-        fileContents['content1'] = content;
-        return readFileAsync('./file2.csv','utf8'); 
+apiQueryAsync('/events')
+    .then((events)=>{
+        events = events;
+        return apiQueryAsync('/people'); 
     })
-    .then((content)=>{
-        fileContents['content2'] = content; 
+    .then((events)=>{
+        people = events; 
     })
     .catch((error)=>{
         //error
     })
     .then(()=>{
-        //fileContents
+        //events, people
     })
+```
+
+-----
+
+# Promise creation (easy way)
+
+```javascript
+import { promisify } from 'util';
+
+const apiQueryAsync = promisify(apiQuery);
 ```
 
 ------------------------
@@ -277,49 +325,39 @@ readFileAsync('./file1.csv','utf8')
 # Promise All
 
 
-
 ```javascript
+import { apiQueryAsync } from './apiAsync';
 
-import { readFile } from 'fs';
-import { promisify } from 'util';
-
-const readFileAsync = promisify(readFile);
-
-Promise
+Promise.all(
+    [
+    apiQueryAsync('/events'),
+    apiQueryAsync('/people')
+    ]
+)
+    .then(([events,people])=>{
+        //events, people
+    })
+    .catch((error)=>{
+        //error
+    })
 
 ```
-
-------------------------
-
-
-# Custom Promise
-
-
-Promisify
-
 
 
 ------------------------
 
 # Async/Await
 
-
-
-
-
 ```javascript
 
-import { readFile } from 'fs';
-import { promisify } from 'util';
-
-const readFileAsync = promisify(readFile);
+import { apiQueryAsync } from './apiAsync';
 
 async function main(){
     try{
-        const content1 = await readFileAsync('./file1.csv','utf8');
-        const content2 = await readFileAsync('./file2.csv','utf8');
+        const events = await apiQueryAsync('/events');
+        const people = await apiQueryAsync('/people');
         
-        //content1, content2
+        //events, people
 
     }catch(error){
         //error
@@ -329,8 +367,29 @@ async function main(){
 main();
 ```
 
-
-~~~
-
-
 ------------------------
+
+# Await*
+
+
+```javascript
+
+import { apiQueryAsync } from './apiAsync';
+
+async function main(){
+    try{
+        const [events, people] = await* [
+            apiQueryAsync('/events'),
+            apiQueryAsync('/people')
+        ]
+
+        //events, people
+
+    }catch(error){
+        //error
+    }
+}
+
+main();
+```
+
