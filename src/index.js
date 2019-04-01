@@ -8,7 +8,10 @@ export async function main() {
         //todo better file name
         const content = await preprocessRemark(
             await fetchTalk(id),
-            `./content/${id.split('/').splice(0,2).join('/')}`,
+            `./content/${id
+                .split('/')
+                .splice(0, 2)
+                .join('/')}`,
         );
 
         document.getElementById('source').innerHTML = content;
