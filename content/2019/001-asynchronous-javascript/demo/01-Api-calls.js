@@ -1,4 +1,4 @@
-import { apiQuerySync } from './api';
+import { apiQuerySync } from './api.js';
 
 const events = apiQuerySync('/events');
 

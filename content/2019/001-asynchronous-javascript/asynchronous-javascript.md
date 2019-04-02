@@ -108,7 +108,7 @@ readFile('file.csv', 'utf8', (error, events)=>{
 # Promise usage
 
 
-!import demo/09-Promise usage.js
+!import demo/09-Promise-usage.js
 
 -----
 
