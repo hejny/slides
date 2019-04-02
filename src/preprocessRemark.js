@@ -11,7 +11,7 @@ export async function preprocessRemark(markdown, path) {
 
                 //todo 404
                 const content = await (await fetch(importFilePath)).text();
-                const contentCode = `<button class="code-run" onclick="window.runScript('${importFilePath}','${importFile}')">Run the code</button>\n\`\`\`javascript\n//${importFile}\n${content}\n\`\`\``;
+                const contentCode = `<p class="code-run"><button class="code-run" onclick="window.runScript('${importFilePath}','${importFile}')">Run the code ▶</button></p>\n\`\`\`javascript\n//${importFile}\n${content}\n\`\`\``;
 
                 return contentCode;
             } else {
@@ -28,8 +28,9 @@ function runScript(src,name){
     scriptElement.type = 'module';
     scriptElement.innerHTML = `import '${src}#${Math.random()}';`; 
     //scriptElement.src = src;
+    console.groupEnd();//todo better console context
     console.group(`Running demo "${name}":`);
     document.body.appendChild(scriptElement);
-    console.groupEnd();
+    document.body.removeChild(scriptElement);
 }
 window.runScript = runScript;

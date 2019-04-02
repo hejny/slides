@@ -1,5 +1,5 @@
 # Asynchronous Javascript
-
+### by [Pavol Hejný](https://www.pavolhejny.com)
 
 ------------------------
 

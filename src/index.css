@@ -134,9 +134,17 @@ body {
      word-wrap: break-word!important;*/
 }
 
+.remark-slides-area p.code-run{
+    height: 0px;
+}
 
-.remark-slides-area .code-run{
-    
+.remark-slides-area button.code-run{
+    position: relative;
+    top: 25px;
+    left: calc( 50% - 72px);
+    border: none;
+    background: #F7720C;
+    color: white;
 }
 /*
    code .remark-code-line{
