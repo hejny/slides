@@ -7,11 +7,11 @@ export async function preprocessRemark(markdown, path) {
                 const importFile = /^\!import\s+(.+)$/.exec(line)[1];
                 const importFilePath = `${path}/${importFile}`;
 
-                console.log('importFilePath', importFilePath);
+                //console.log('importFilePath', importFilePath);
 
                 //todo 404
                 const content = await (await fetch(importFilePath)).text();
-                const contentCode = `\`\`\`javascript\n//${importFile}\n${content}\n\`\`\`\n<button onclick="window.runScript('${importFilePath}')">Run the code</button>`;
+                const contentCode = `<button class="code-run" onclick="window.runScript('${importFilePath}','${importFile}')">Run the code</button>\n\`\`\`javascript\n//${importFile}\n${content}\n\`\`\``;
 
                 return contentCode;
             } else {
@@ -23,11 +23,13 @@ export async function preprocessRemark(markdown, path) {
     return markdown;
 }
 
-function runScript(src){
+function runScript(src,name){
     const scriptElement = document.createElement('script');
     scriptElement.type = 'module';
-    scriptElement.innerHTML = `import '${src}#${Math.random()}';console.log('aa');`; 
+    scriptElement.innerHTML = `import '${src}#${Math.random()}';`; 
     //scriptElement.src = src;
+    console.group(`Running demo "${name}":`);
     document.body.appendChild(scriptElement);
+    console.groupEnd();
 }
 window.runScript = runScript;

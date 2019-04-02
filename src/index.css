@@ -133,6 +133,11 @@ body {
     /*overflow-x: visible!important;
      word-wrap: break-word!important;*/
 }
+
+
+.remark-slides-area .code-run{
+    
+}
 /*
    code .remark-code-line{
    word-wrap: break-word!important;

@@ -60,15 +60,15 @@ export function postprocessRemark() {
 }
 
 function render(slide) {
-    console.groupCollapsed('Slide');
-    console.log(slide);
-    console.log(slide.innerHTML);
+    //console.groupCollapsed('Slide');
+    //console.log(slide);
+    //console.log(slide.innerHTML);
     slide.setAttribute('data-original-inner-html', slide.innerHTML);
     renderCodesample(slide);
     renderSampleBackground(slide);
-    console.log(slide.innerHTML);
+    //console.log(slide.innerHTML);
     //todo put loader
-    console.groupEnd();
+    //console.groupEnd();
 }
 
 function unrender(slide) {
@@ -83,7 +83,7 @@ function renderCodesample(slide) {
         const [full, type, jsfiddleUriPart] = slide.innerHTML.match(
             CODESAMPLE_REGEX,
         );
-        console.log(`Slide is a codesample from "${jsfiddleUriPart}".`);
+        //console.log(`Slide is a codesample from "${jsfiddleUriPart}".`);
         slide.innerHTML = `
     <h1>🚀</h1>
     <iframe class="left" src="https://jsfiddle.net/${jsfiddleUriPart}/embedded/${type}/dark/"></iframe>
@@ -91,7 +91,7 @@ function renderCodesample(slide) {
   `;
         slide.classList.add('remark-slide-content-with-codesample');
     } else {
-        console.log(`[x] Slide is not a codesample.`, CODESAMPLE_REGEX);
+        //console.log(`[x] Slide is not a codesample.`, CODESAMPLE_REGEX);
     }
 }
 
@@ -99,17 +99,17 @@ function renderSampleBackground(slide) {
     const SAMPLE_BACKGROUND_REGEX = /<p>sample-background:(.+)<\/p>/;
     if (SAMPLE_BACKGROUND_REGEX.test(slide.innerHTML)) {
         const [full, url] = slide.innerHTML.match(SAMPLE_BACKGROUND_REGEX);
-        console.log(`Slide is a sample in background from "${url}".`);
+        //console.log(`Slide is a sample in background from "${url}".`);
         slide.innerHTML = `
     <h1>🚀</h1>
     <iframe src="https://${url}"></iframe>
   `;
         slide.classList.add('remark-slide-content-with-sample-background');
     } else {
-        console.log(
+        /*console.log(
             `[x] Slide is not a sample in background.`,
             SAMPLE_BACKGROUND_REGEX,
-        );
+        );*/
     }
 }
 
