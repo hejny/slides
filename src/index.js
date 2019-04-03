@@ -1,5 +1,5 @@
-import { postprocessRemark } from './postprocessRemark';
-import { preprocessRemark } from './preprocessRemark';
+import { postprocessRemark } from './postprocessRemark.js';
+import { preprocessRemark } from './preprocessRemark.js';
 
 export async function main() {
     const id = getParameter('id');
