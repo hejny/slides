@@ -4,17 +4,17 @@ let events, people;
 
 //todo maybe different case
 apiQueryAsync('/events')
-    .then((events) => {
-        events = events;
+    .then((data) => {
+        events = data;
         return apiQueryAsync('/people');
     })
-    .then((events) => {
-        people = events;
-    })
-    .catch((error) => {
-        console.error(error);
+    .then((data) => {
+        people = data;
     })
     .then(() => {
         console.log('events', events);
         console.log('people', people);
+    })
+    .catch((error) => {
+        console.error(error);
     });

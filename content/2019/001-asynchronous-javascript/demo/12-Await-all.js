@@ -7,9 +7,10 @@ async function main() {
             apiQueryAsync('/people'),
         ]);
 
-        //events, people
+        console.log('events', events);
+        console.log('people', people);
     } catch (error) {
-        //error
+        console.error(error);
     }
 }
 

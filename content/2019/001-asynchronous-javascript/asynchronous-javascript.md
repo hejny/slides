@@ -1,12 +1,13 @@
-# Asynchronous Javascript
-### by [Pavol Hejný](https://www.pavolhejny.com)
+# Asynchronous JavaScript
+[Pavol Hejný](https://www.pavolhejny.com/)
 
-------------------------
+![](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://talks.pavolhejny.com/?id=2019/001-asynchronous-javascript/asynchronous-javascript)
 
-# CPU vs. I/O
+https://talks.pavolhejny.com/?id=2019/001-asynchronous-javascript/asynchronous-javascript
 
-![](/content/2019/001-asynchronous-javascript/hdd.jpg)
+https://github.com/hejny/talks/tree/master/content/2019/001-asynchronous-javascript
 
+<!--<footer>2018-10-07 | LinuxDays </footer>-->
 
 ------------------------
 
@@ -52,6 +53,13 @@ readFile('file.csv', 'utf8', (error, events)=>{
 
 ------------------------
 
+# CPU vs. I/O
+
+![](/content/2019/001-asynchronous-javascript/hdd.jpg)
+
+
+------------------------
+
 # API Calls
 
 !import demo/01-Api-calls.js
@@ -91,16 +99,10 @@ readFile('file.csv', 'utf8', (error, events)=>{
 
 ------------------------
 
-# Generator
-
-!import demo/07-Generator.js
-
-------------------------
-
 # Promise creation
 
 
-!import demo/08-Promise-creation.js
+!import demo/08-Promise-creation.js --norun
 
 
 ------------------------
@@ -112,7 +114,8 @@ readFile('file.csv', 'utf8', (error, events)=>{
 
 -----
 
-# Promise creation (easy way in Node.js)
+# Promise creation
+Easy way in Node.js
 
 ```javascript
 import { promisify } from 'util';
@@ -138,7 +141,34 @@ const apiQueryAsync = promisify(apiQuery);
 
 # Await Promise.all
 
-- Same as deprecated await*
+*Same as deprecated await*
 
 !import demo/12-Await-all.js
 
+
+------------------------
+
+# Generator
+a simple showcase
+
+!import demo/13-Generator-simple.js
+
+
+------------------------
+
+# Generator
+
+!import demo/14-Generator-async.js
+
+
+------------------------
+
+# </🏁Asynchronous JavaScript>
+
+![](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://talks.pavolhejny.com/?id=2019/001-asynchronous-javascript/asynchronous-javascript)
+
+https://talks.pavolhejny.com/?id=2019/001-asynchronous-javascript/asynchronous-javascript
+
+https://github.com/hejny/talks/tree/master/content/2019/001-asynchronous-javascript
+
+https://ponyfoo.com/articles/understanding-javascript-async-await

@@ -4,9 +4,8 @@ try {
     const events = apiQuerySync('/events'); //100ms
     const people = apiQuerySync('/people'); //100ms
 
-    //events, people
     console.log('events', events);
-    console.log('events', events);
+    console.log('people', people);
 } catch (error) {
     console.error(error);
 }

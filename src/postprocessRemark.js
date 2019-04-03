@@ -42,8 +42,6 @@ export function postprocessRemark() {
         //-----------------------------------------
         */
 
-
-
         //todo also working on first slude
         addClassNameListener(
             slideContainer,

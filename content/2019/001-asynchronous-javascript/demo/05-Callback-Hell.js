@@ -1,3 +1,5 @@
+import { apiQuery } from './api';
+
 apiQuery('/events', (error, events) => {
     if (error) {
         console.error(error);

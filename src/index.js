@@ -26,6 +26,8 @@ export async function main() {
             '.remark-slide-container h1',
         ).innerText;
     } catch (error) {
+        console.error(error);
+
         const indexMarkdown = await fetchContentFile('index.md');
         const indexHtml = markdown.toHTML(indexMarkdown);
 

@@ -4,7 +4,6 @@ const dataStorage = {};
 const total = 2;
 let loaded = 0;
 let wasError = false;
-
 function dataLoaded(queryName) {
     return (error, data) => {
         if (error) {
@@ -16,12 +15,10 @@ function dataLoaded(queryName) {
             dataStorage[queryName] = data;
             loaded++;
             if (loaded === total) {
-                console.log('events', events);
-                //dataStorage
+                console.log('dataStorage', dataStorage);
             }
         }
     };
 }
-
 apiQuery('/events', dataLoaded('events'));
 apiQuery('/people', dataLoaded('people'));

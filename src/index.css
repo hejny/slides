@@ -134,16 +134,36 @@ body {
      word-wrap: break-word!important;*/
 }
 
-.remark-slides-area p.code-run{
-    height: 0px;
+.remark-slides-area p.code-filename {
+    height: 0;
+    margin: 0;
+    margin-top: 10px;
+    /*/border: 1px solid red;/**/
 }
 
-.remark-slides-area button.code-run{
+.remark-slides-area p.code-filename span {
+    position: relative;
+    font-size: 20px;
+    border: none;
+    color: #777;
+    background-color: #f0f0f0;
+    padding: 5px;
+    padding-top: 0;
+    border-radius: 3px;
+}
+
+.remark-slides-area p.code-run {
+    height: 0;
+    margin: 0;
+    /*/border: 1px solid red;/**/
+}
+
+.remark-slides-area p.code-run button {
     position: relative;
     top: 25px;
-    left: calc( 50% - 72px);
+    left: calc(50% - 72px);
     border: none;
-    background: #F7720C;
+    background: #f7720c;
     color: white;
 }
 /*
