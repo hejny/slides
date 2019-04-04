@@ -194,19 +194,16 @@ a simple showcase
 ```javascript
 import { TouchController } from 'touchcontroller';
 
-var scene = document.getElementById('scene');
-var ctx = scene.getContext('2d');
+const scene = document.getElementById('scene');
+const ctx = scene.getContext('2d');
 ctx.lineWidth = 10;
-ctx.lineCap = "round";
+ctx.lineCap = 'round';
+ctx.strokeStyle = 'white';
 
-
-var touchController = new TouchController.fromCanvas(scene);
+const touchController = new TouchController.fromCanvas(scene);
 touchController.touches.subscribe(function(touch){
 
-    console.log(touch);
-
-    var color = '#'+Math.floor(Math.random()*16777215).toString(16);
-    var lastFrame = touch.firstFrame;
+    let lastFrame = touch.firstFrame;
 
     touch.frames.subscribe(function(frame){
         ctx.strokeStyle = color;
@@ -216,7 +213,6 @@ touchController.touches.subscribe(function(touch){
         ctx.stroke();
         lastFrame = frame;
     });
-
 });
 ```
 
