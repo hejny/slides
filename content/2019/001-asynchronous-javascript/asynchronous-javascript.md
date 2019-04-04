@@ -176,7 +176,6 @@ a simple showcase
 
 ------------------------
 
-# Events + RxJS
 
 !import demo/16-RxJs-events.js
 
@@ -193,7 +192,7 @@ a simple showcase
 ------------------------
 
 ```javascript
-const TC = TouchController;
+import { TouchController } from 'touchcontroller';
 
 var scene = document.getElementById('scene');
 var ctx = scene.getContext('2d');
@@ -201,7 +200,7 @@ ctx.lineWidth = 10;
 ctx.lineCap = "round";
 
 
-var touchController = new TC.TouchController.fromCanvas(scene);
+var touchController = new TouchController.fromCanvas(scene);
 touchController.touches.subscribe(function(touch){
 
     console.log(touch);
