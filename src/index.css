@@ -32,9 +32,10 @@ body {
 .remark-slides-area h2,
 .remark-slides-area h3,
 .remark-slides-area a {
-    background: linear-gradient(to left, #fff, #fff);
+    /*background: linear-gradient(to left, #fff, #fff);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;*/
+    color: white;
 }
 .remark-slide-content-with-image h1 {
     margin-left: -100px;

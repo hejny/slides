@@ -16,7 +16,8 @@ https://github.com/hejny/talks/tree/master/content/2019/001-asynchronous-javascr
 ## PHP
 ```php
 $content = file_get_content('file.csv');
-//$content
+
+print_r($content);
 ```
 
 ## Node.js
@@ -160,6 +161,65 @@ a simple showcase
 
 !import demo/14-Generator-async.js
 
+------------------------
+
+# Events
+
+!import demo/15-Events.js
+
+
+------------------------
+
+# Events
+
+<canvas id="scene1" width="500" height="500" style="border: 2px solid white"></canvas>
+
+------------------------
+
+# Events + RxJS
+
+!import demo/16-RxJs-events.js
+
+
+------------------------
+
+# Events + RxJS
+
+
+<canvas id="scene2" width="500" height="500" style="border: 2px solid white"></canvas>
+
+
+
+------------------------
+
+```javascript
+const TC = TouchController;
+
+var scene = document.getElementById('scene');
+var ctx = scene.getContext('2d');
+ctx.lineWidth = 10;
+ctx.lineCap = "round";
+
+
+var touchController = new TC.TouchController.fromCanvas(scene);
+touchController.touches.subscribe(function(touch){
+
+    console.log(touch);
+
+    var color = '#'+Math.floor(Math.random()*16777215).toString(16);
+    var lastFrame = touch.firstFrame;
+
+    touch.frames.subscribe(function(frame){
+        ctx.strokeStyle = color;
+        ctx.beginPath();
+        ctx.moveTo(lastFrame.position.x,lastFrame.position.y);
+        ctx.lineTo(frame.position.x,frame.position.y);
+        ctx.stroke();
+        lastFrame = frame;
+    });
+
+});
+```
 
 ------------------------
 
@@ -172,3 +232,5 @@ https://talks.pavolhejny.com/?id=2019/001-asynchronous-javascript/asynchronous-j
 https://github.com/hejny/talks/tree/master/content/2019/001-asynchronous-javascript
 
 https://ponyfoo.com/articles/understanding-javascript-async-await
+
+https://github.com/touchcontroller/touchcontroller
