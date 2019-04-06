@@ -16,6 +16,7 @@ export async function main() {
                     .join('/')}`,
             );
 
+            document.getElementById('root').innerHTML = `<textarea id="source"></textarea>`;
             document.getElementById('source').innerHTML = content;
             /*const slideshow = */
             remark.create({
@@ -40,9 +41,16 @@ export async function main() {
     if (errorMessage) {
         indexMarkdown = `_${errorMessage}_\n\n${indexMarkdown}`;
     }
-    const indexHtml = markdown.toHTML(indexMarkdown);
 
-    document.getElementById('index').innerHTML = indexHtml;
+    if(getParameter('xid')){
+        const errorMessage = `This presentation is under construction.`;
+        indexMarkdown = `_${errorMessage}_\n\n${indexMarkdown}`;
+    }
+
+    let indexHtml = markdown.toHTML(indexMarkdown);
+    indexHtml = `<div id="index"><div class="inner">${indexHtml}</div></div>`;
+
+    document.getElementById('root').innerHTML = indexHtml;
     document.getElementById('source').style.display = 'none';
 }
 

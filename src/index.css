@@ -15,6 +15,20 @@ body {
      font-family: 'Open Sans', sans-serif;
      */
 }
+
+#index{
+    text-align: center;
+}
+
+#index .inner{
+    display: inline-block;
+    text-align: left;
+}
+
+#index a{
+    font-size: 1.2em;
+}
+
 .remark-slides-area {
     background-color: black;
 }
