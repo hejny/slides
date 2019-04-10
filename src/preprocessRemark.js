@@ -33,6 +33,36 @@ export async function preprocessRemark(markdown, path) {
         }),
     )).join('\n');
 
+    const slides = markdown.split('---').map((slide) => {
+        let [screen, notes] = slide.split('???', 2);
+        notes = notes || '';
+        //notes += `\n\nX`;
+        return { screen, notes };
+    });
+
+    console.log(slides);
+
+    const normalizedLocation = window.location.toString();
+    slides[0].screen += `
+
+
+![](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=${encodeURIComponent(
+        normalizedLocation,
+    )}})
+
+<div class="qr-caption"><a href="https://talks.pavolhejny.com/">talks.pavolhejny.com</a></div>
+<footer>2018-10-07 | LinuxDays </footer>
+`;
+
+    slides[0].notes += `
+<hr/>
+To present press [C] and [P];
+`;
+
+    markdown = slides
+        .map((slide) => `${slide.screen}\n???\n${slide.notes}`)
+        .join('---');
+
     return markdown;
 }
 

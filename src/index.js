@@ -16,7 +16,9 @@ export async function main() {
                     .join('/')}`,
             );
 
-            document.getElementById('root').innerHTML = `<textarea id="source"></textarea>`;
+            document.getElementById(
+                'root',
+            ).innerHTML = `<textarea id="source"></textarea>`;
             document.getElementById('source').innerHTML = content;
             /*const slideshow = */
             remark.create({
@@ -42,7 +44,7 @@ export async function main() {
         indexMarkdown = `_${errorMessage}_\n\n${indexMarkdown}`;
     }
 
-    if(getParameter('xid')){
+    if (getParameter('xid')) {
         const errorMessage = `This presentation is under construction.`;
         indexMarkdown = `_${errorMessage}_\n\n${indexMarkdown}`;
     }

@@ -6,7 +6,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "lando start",
+    "start": "lando start & npm run prettier-watch",
     "stop": "lando stop",
     "prettier": "prettier --config .prettierrc --write \"{src,content}/**/*.{js,css,html}\"",
     "prettier-watch": "onchange \"**/*\" -- npm run prettier"

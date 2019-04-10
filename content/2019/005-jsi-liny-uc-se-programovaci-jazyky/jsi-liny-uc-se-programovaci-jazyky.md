@@ -1,1 +1,0 @@
-# Jsi líný? Uč se programovací jazyky!

@@ -1,6 +1,6 @@
 # Useful browser APIs
 
-Užitečná browser APIs
+???
 
 Jak tvořit velké a komplexní aplikace přímo na webu? V krátkosti vám ukážu nejzajímavější a podle mě nejdůležitější javascriptové prohlížečové API, které vám při tom pomohou.
 
@@ -11,21 +11,6 @@ LocalStorage, IndexedDB - Srovnání perzistentních uložišť v prohlížeči
 WebGl, WebVR - 3D na webu
 Web Audio/Video - Média na webu
 Fullscreen API, Pointer Lock API - Pro vývoj her
-
-------------------------
-
-
-# Užitečná Browser APIs
-
-## [Pavol Hejný](https://www.pavolhejny.com/)
-
-![](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.pavolhejny.com/uzitecna-browser-apis)
-
-https://www.pavolhejny.com/uzitecna-browser-apis
-
-<footer>2018-10-07 | LinuxDays </footer>
-
-
 
 ------------------------
 
