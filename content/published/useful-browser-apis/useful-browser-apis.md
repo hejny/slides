@@ -56,8 +56,9 @@ request.onsuccess = () => {
     conferencesStore.createIndex('by_name', 'name', { unique: true });
     conferencesStore.createIndex('by_rating', 'rating');
 
-    conferencesStore.put({ name: 'Linux Days', rating: 10 });
-    conferencesStore.put({ name: 'OpenAlt', rating: 10 });
+    conferencesStore.put({ name: 'Frontendisti', rating: 10 });
+    conferencesStore.put({ name: 'DevConf', rating: 9 });
+    conferencesStore.put({ name: 'OpenAlt', rating: 8 });
 };
 ```
 
@@ -75,9 +76,9 @@ db.version(1).stores({
 
 ```javascript
 await db.conferences.add({
-    name: 'LinuxDays 2018',
+    name: 'Frontendisti Duben',
     rating: 10,
-    icon: await getBlob('tux.png')
+    icon: await getBlob('logo.png')
 });
 ```
 
@@ -87,6 +88,10 @@ await db.conferences
 		.above(8)
 		.toArray();
 ```
+
+???
+
+Framework nad uložišti
 
 ------------------------
 
@@ -213,10 +218,10 @@ _(Push technologies)_
 # WebSockets
 
 ```javascript
-const socket = new WebSocket('wss://www.linuxdays.cz/');
+const socket = new WebSocket('wss://devconf.info');
 
 socket.addEventListener('open', () => {
-    socket.send('Hello from OpenAlt!');
+    socket.send('Hello from Frontendisti!');
 });
 
 socket.addEventListener('message', (event) => {
@@ -383,12 +388,6 @@ scene.requestPointerLock();
 ```
 
 ------------------------
-
-## Díky za pozornost!
-
-![](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.pavolhejny.com/uzitecna-browser-apis)
-
-https://www.pavolhejny.com/uzitecna-browser-apis
 
 https://github.com/hejny/sample-js-game/ _← 2D canvas_
 
