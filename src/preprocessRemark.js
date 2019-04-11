@@ -59,6 +59,20 @@ export async function preprocessRemark(markdown, path) {
 To present press [C] and [P];
 `;
 
+    const lastSlide = slides[slides.length - 1];
+    lastSlide.screen = `
+
+
+![](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=${encodeURIComponent(
+        normalizedLocation,
+    )}})
+
+<div class="qr-caption"><a href="https://talks.pavolhejny.com/">talks.pavolhejny.com</a></div>
+
+    ${lastSlide.screen}
+
+`;
+
     markdown = slides
         .map((slide) => `${slide.screen}\n???\n${slide.notes}`)
         .join('---');

@@ -57,7 +57,7 @@ export async function main() {
 }
 
 function fetchTalk(id) {
-    return fetchContentFile(`${id}.md`);
+    return fetchContentFile(`published/${id}/${id}.md`);
 }
 
 async function fetchContentFile(contentFile) {
