@@ -54,7 +54,7 @@ export async function preprocessRemark(markdown, path) {
     )}})
 
 <div class="qr-caption"><a href="https://talks.pavolhejny.com/">talks.pavolhejny.com</a></div>
-<footer>2018-10-07 | LinuxDays </footer>
+<footer>Minikonference duben | Frontendisti.cz </footer>
 `;
 
     slides[0].notes += `
