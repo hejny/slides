@@ -2,7 +2,7 @@
 //todo product placements
 
 export async function preprocessRemark(markdown, path) {
-    markdown = markdown.split(/-{3,}/gm).join('---');
+    markdown = markdown.split(/(-|=){3,}/gm).join('---');
 
     markdown = (await Promise.all(
         markdown.split('\n').map(async (line) => {

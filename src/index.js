@@ -65,7 +65,7 @@ function fetchTalk(id) {
 }
 
 async function fetchContentFile(contentFile) {
-    const content = await fetch(`./content/${contentFile}`);
+    const content = await fetch(`./content/${contentFile}?v=${Math.random()}`); //todo better version
     if (content.status === 404) {
         throw new Error(`Content file "${contentFile}" not found.`);
     }

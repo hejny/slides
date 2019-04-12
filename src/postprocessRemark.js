@@ -6,7 +6,16 @@ export function postprocessRemark() {
 
         //-----------------------------------------Background image //todo maybe to render f
         {
-            const images = slide.querySelectorAll('img');
+            const images = Array.from(slide.querySelectorAll('img'));
+
+            /*
+            for (const image of images) {
+                image.src = `/content/drafts/tvorte-uspesny-ne-dokonaly-produkt/${
+                    image.src
+                }`;
+            }
+            */
+
             if (images.length === 1) {
                 const image = images[0];
                 image.onload = () => {
