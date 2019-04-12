@@ -1,7 +1,7 @@
 //todo event and date on begining
 //todo product placements
 
-export async function preprocessRemark(markdown, path) {
+export async function preprocessRemark(markdown, path, branding) {
     markdown = markdown.split(/(-|=){3,}/gm).join('---');
 
     markdown = (await Promise.all(
@@ -54,7 +54,7 @@ export async function preprocessRemark(markdown, path) {
     )}})
 
 <div class="qr-caption"><a href="https://talks.pavolhejny.com/">talks.pavolhejny.com</a></div>
-<footer>Minikonference duben | Frontendisti.cz </footer>
+<footer>${branding.event}</footer>
 `;
 
     slides[0].notes += `

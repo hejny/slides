@@ -3,7 +3,7 @@
 
 <!--<footer>2018-10-07 | LinuxDays </footer>-->
 
-------------------------
+========================
 
 # Synchronous code
 
@@ -23,7 +23,7 @@ const content = readFileSync('file.csv', 'utf8');
 console.log('content',content);
 ```
 
-------------------------
+========================
 
 # PHP vs. Node.js
 
@@ -46,20 +46,20 @@ readFile('file.csv', 'utf8', (error, events)=>{
 });
 ```
 
-------------------------
+========================
 
 # CPU vs. I/O
 
 ![](/content/2019/001-asynchronous-javascript/hdd.jpg)
 
 
-------------------------
+========================
 
 # API Calls
 
 !import demo/01-Api-calls.js
 
-------------------------
+========================
 
 # Callbacks
 
@@ -67,32 +67,32 @@ readFile('file.csv', 'utf8', (error, events)=>{
 !import demo/02-Callbacks.js
 
 
-------------------------
+========================
 
 # Error handling
 
 !import demo/03-Error-handling.js
 
 
-------------------------
+========================
 
 # Callback error handling
 
 !import demo/04-Callback-error-handling.js
 
-------------------------
+========================
 
 # Callback Hell
 
 !import demo/05-Callback-Hell.js
 
-------------------------
+========================
 
 # Parallel
 
 !import demo/06-Parallel.js
 
-------------------------
+========================
 
 # Promise creation
 
@@ -100,7 +100,7 @@ readFile('file.csv', 'utf8', (error, events)=>{
 !import demo/08-Promise-creation.js --norun
 
 
-------------------------
+========================
 
 # Promise usage
 
@@ -118,7 +118,7 @@ import { promisify } from 'util';
 const apiQueryAsync = promisify(apiQuery);
 ```
 
-------------------------
+========================
 
 # Promise.all
 
@@ -126,13 +126,13 @@ const apiQueryAsync = promisify(apiQuery);
 !import demo/10-Promise-all.js
 
 
-------------------------
+========================
 
 # Async/Await
 
 !import demo/11-Async-Await.js
 
-------------------------
+========================
 
 # Await Promise.all
 
@@ -141,7 +141,7 @@ const apiQueryAsync = promisify(apiQuery);
 !import demo/12-Await-all.js
 
 
-------------------------
+========================
 
 # Generator
 a simple showcase
@@ -149,32 +149,32 @@ a simple showcase
 !import demo/13-Generator-simple.js
 
 
-------------------------
+========================
 
 # Generator
 
 !import demo/14-Generator-async.js
 
-------------------------
+========================
 
 # Events
 
 !import demo/15-Events.js
 
 
-------------------------
+========================
 
 # Events
 
 <canvas id="scene1" width="500" height="500" style="border: 2px solid white"></canvas>
 
-------------------------
+========================
 
 
 !import demo/16-RxJs-events.js
 
 
-------------------------
+========================
 
 # Events + RxJS
 
@@ -183,7 +183,7 @@ a simple showcase
 
 
 
-------------------------
+========================
 
 ```javascript
 import { TouchController } from 'touchcontroller';
@@ -210,7 +210,7 @@ touchController.touches.subscribe(function(touch){
 });
 ```
 
-------------------------
+========================
 
 # </🏁Asynchronous JavaScript>
 

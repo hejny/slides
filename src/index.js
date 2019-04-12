@@ -1,5 +1,7 @@
 import { postprocessRemark } from './postprocessRemark.js';
 import { preprocessRemark } from './preprocessRemark.js';
+import { getParameter } from './getParameter.js';
+import { fetchContentFile, fetchTalk } from './fetchContent.js';
 
 export async function main() {
     const id = getParameter('id');
@@ -14,6 +16,9 @@ export async function main() {
                     .split('/')
                     .splice(0, 2)
                     .join('/')}`,
+                {
+                    event: getParameter('event'),
+                },
             );
 
             document.getElementById(
@@ -54,33 +59,4 @@ export async function main() {
 
     document.getElementById('root').innerHTML = indexHtml;
     document.getElementById('source').style.display = 'none';
-}
-
-function fetchTalk(id) {
-    if (/^drafts/.test(id)) {
-        return fetchContentFile(`${id}/${id.split('/')[1]}.md`);
-    } else {
-        return fetchContentFile(`published/${id}/${id}.md`);
-    }
-}
-
-async function fetchContentFile(contentFile) {
-    const content = await fetch(`./content/${contentFile}?v=${Math.random()}`); //todo better version
-    if (content.status === 404) {
-        throw new Error(`Content file "${contentFile}" not found.`);
-    }
-    return await content.text();
-}
-
-function getParameter(parameterName) {
-    var result = null,
-        tmp = [];
-    location.search
-        .substr(1)
-        .split('&')
-        .forEach(function(item) {
-            tmp = item.split('=');
-            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-        });
-    return result;
 }
