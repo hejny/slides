@@ -5,13 +5,11 @@
 
 # Current
 
-
+- [(2019-04-13, Pilsen) Tvořte úspěšný, ne dokonalý produkt! ](?id=drafts/tvorte-uspesny-ne-dokonaly-produkt&event=Plzeňský Barcamp)
+- [(2019-04-11, Brno) Useful browser APIs ](?id=useful-browser-apis&event=Minikonference duben | Frontendisti.cz )
 - [(2019-04-06, Prague) Tvořte úspěšný, ne dokonalý produkt! ](https://docs.google.com/presentation/d/1afsxwtzX1WVsmFrRbQl8l5du8tdLvXj9PFpheNdp9TM)
 - [(2019-04-04, Pilsen) Asynchronní Javascript ](?id=asynchronous-javascript&event=WebMeetup Plzeň)
-- [(2019-04-11, Brno) Useful browser APIs ](?id=useful-browser-apis&event=Minikonference duben | Frontendisti.cz )
 
 # Upcomming
 
-
-- [(2019-04-13, Pilsen) Tvořte úspěšný, ne dokonalý produkt! ](?id=drafts/tvorte-uspesny-ne-dokonaly-produkt&event=Plzeňský Barcamp)
-- [(2019-04-11, Prague) Jsi líný? Uč se programovací jazyky! ](https://docs.google.com/presentation/d/10u7VyrKm9c1ais3H5_GODEXNW5CFOM33zaNSYxsMsDk/edit?usp=sharing)
+- [(2019-04-11, Prague) Jsi líný? Uč se programovací jazyky! ](?xid=drafts/tvorte-uspesn)

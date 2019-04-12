@@ -212,14 +212,6 @@ touchController.touches.subscribe(function(touch){
 
 ========================
 
-# </🏁Asynchronous JavaScript>
-
-![](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://talks.pavolhejny.com/?id=2019/001-asynchronous-javascript/asynchronous-javascript)
-
-https://talks.pavolhejny.com/?id=2019/001-asynchronous-javascript/asynchronous-javascript
-
-https://github.com/hejny/talks/tree/master/content/2019/001-asynchronous-javascript
-
 https://ponyfoo.com/articles/understanding-javascript-async-await
 
 https://github.com/touchcontroller/touchcontroller

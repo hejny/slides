@@ -66,6 +66,8 @@ To present press [C] and [P];
     const lastSlide = slides[slides.length - 1];
     lastSlide.screen = `
 
+# </🏁Talk is="over">
+
 ![](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=${encodeURIComponent(
         normalizedLocation,
     )}})
