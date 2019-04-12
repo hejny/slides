@@ -57,7 +57,11 @@ export async function main() {
 }
 
 function fetchTalk(id) {
-    return fetchContentFile(`published/${id}/${id}.md`);
+    if (/^drafts/.test(id)) {
+        return fetchContentFile(`${id}/${id.split('/')[1]}.md`);
+    } else {
+        return fetchContentFile(`published/${id}/${id}.md`);
+    }
 }
 
 async function fetchContentFile(contentFile) {
