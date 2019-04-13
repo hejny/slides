@@ -3,11 +3,11 @@ export function postprocessRemark() {
         '.remark-slide-container',
     )) {
         const slide = slideContainer.querySelector('.remark-slide-content'); //todo rename to slideContent
+        const images = Array.from(slide.querySelectorAll('img'));
+        const codes = Array.from(slide.querySelectorAll('code'));
 
         //-----------------------------------------Background image //todo maybe to render f
         {
-            const images = Array.from(slide.querySelectorAll('img'));
-
             /*
             for (const image of images) {
                 image.src = `/content/drafts/tvorte-uspesny-ne-dokonaly-produkt/${
@@ -15,7 +15,6 @@ export function postprocessRemark() {
                 }`;
             }
             */
-
             if (images.length === 1) {
                 const image = images[0];
                 image.onload = () => {
@@ -31,10 +30,18 @@ export function postprocessRemark() {
                         slide.classList.add('remark-slide-content-with-image');
 
                         for (const heading of slide.querySelectorAll('h1')) {
-                            wrapElement(heading);
+                            wrapElement(heading, 'inner');
                         }
                     }
                 };
+            }
+        }
+        //-----------------------------------------
+
+        //-----------------------------------------Background image //todo maybe to render f
+        {
+            if (images.length === 0 && codes.length === 0) {
+                wrapElement(wrapElement(slide, ''), 'text-slide');
             }
         }
         //-----------------------------------------
@@ -120,8 +127,9 @@ function renderSampleBackground(slide) {
     }
 }
 
-function wrapElement(element) {
-    element.innerHTML = `<div class="inner">${element.innerHTML}</div>`;
+function wrapElement(element, className) {
+    element.innerHTML = `<div class="${className}">${element.innerHTML}</div>`;
+    return element;
 }
 
 function addClassNameListener(elem, callback) {

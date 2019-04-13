@@ -323,3 +323,15 @@ body {
     margin-top: 1em;
     font-size: 2rem;
 }
+
+.remark-slides-area .text-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    width: 100%;
+}
+
+.remark-slides-area .text-slide h1 {
+    font-size: 5em;
+}
