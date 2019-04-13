@@ -51,7 +51,7 @@ export async function preprocessRemark(markdown, path, branding) {
 
 ![](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=${encodeURIComponent(
         normalizedLocation,
-    )}})
+    )})
 
 <div class="qr-caption"><a href="https://talks.pavolhejny.com/">talks.pavolhejny.com</a></div>
 <footer>${branding.event}</footer>
