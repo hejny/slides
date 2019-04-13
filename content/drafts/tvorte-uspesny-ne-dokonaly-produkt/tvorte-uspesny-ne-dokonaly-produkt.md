@@ -38,8 +38,11 @@ Zhruba před 10 lety jsem
 
 ![](/content/drafts/tvorte-uspesny-ne-dokonaly-produkt/krmitka.png)
 
+
 ???
 
+1.7 roku za 3 dny
+ 
 ========================
 
 # Analýza
@@ -53,45 +56,63 @@ Předtím, než začneme na čemkoliv dělat je potřeba udělat pečlivou anal�
 
 # Mám nápad
 ## vs.
-### Někdo má nápad a já ho jdu realizovat 
+## Mám zadání
 
 
 ???
+
+Pokud mám zadání, nemusím to teoreticky řešit. Ale je obré.
 
 ========================
 
-# Co je potřeba/problém za danou věcí? 
 
+# Co je potřeba */ problém* za danou věcí? 
 
 ???
+
+Hledejte základní potřeby 
+Pohodlí, bezpečnost, jídlo, sex, zábava...
 
 ========================
 
 # Opravdu problém existuje?
-
-
-???
+## Nejedná se pouze o můj výmysl?
 
 ========================
 
-# Kdo je zákazník / uživatel?
+# Persony
+## Kdo přesně daný problém má?
+## ↓
+## Kdo bude zákazník či uživatel?
 
 
 ???
+
+Žena, češka, z Plzně, Programuje v Pythonu, pije Starobrno,...
 
 ========================
 
-# Kolik je za řešení ochoten utratit?
-
-
-???
+# Kolik daných lidí existuje?
+## 10?, 1k?, 1m?, 1mld?
 
 ========================
 
-# Bude svět lepší poté, co daný problém vyřešíme? 
-
+# Kolik je za řešení ochoten
+# **utratit**?
 
 ???
+
+Očeává to zdarma nebo zaplatí 10 000 za měsíc?
+
+========================
+
+# Bude svět lepší poté,
+# co daný problém vyřešíme? 
+
+???
+
+Hlavně z hlediska sebenevyhoření a týmu.
+
 
 ========================
 
@@ -100,24 +121,20 @@ Předtím, než začneme na čemkoliv dělat je potřeba udělat pečlivou anal�
 
 ???
 
+Dále budu mluvit pouze o situaci kdy to je **Software**.
+
 ========================
 
-## 📱Mobilní aplikace? ( Android? iOS? ) Web? ( Progressive web app? ) FB skupina? 💬 Chatbot?
+## 📱Mobilní aplikace? *( Android? iOS? )*
+## Web? *( Progressive web app? )*
+## FB skupina? 💬 Chatbot?
 
 
 ???
 
-Výhody každěho řešení
+Co za software:
+todo Výhody každěho řešení
 
-
-========================
-
-# Co vše se dá dělat?
-
-?
-
-
-???
 
 ========================
 
@@ -137,10 +154,44 @@ Všechno je super, ale zdroje jsou omezené a když se dají na jedno, nezůstan
 
 # Bezpečnost!
 
+https://github.com/hejny/secure-app
+
+```php
+$password_hash = md5($_REQUEST['password']);
+$query = $db->prepare("SELECT password,id FROM users WHERE username='{$_REQUEST['username']}'");
+```
+
+```php
+$pagefile = __DIR__."/pages/{$_GET['page']}.php";
+if(!file_exists($pagefile)){
+    $pagefile = __DIR__."/pages/wall.php";
+}
+
+require $pagefile;
+```
+
+
+
+
 ???
 
 Ale jedna věc, kterou byste neměli zanedbat je bezpečnost.
 
+
+========================
+
+# Zálohujte!
+## A ověřte, že **zálohy fungují!**
+
+???
+
+Např. AWS S3
+
+========================
+
+
+# Nastavte měření!
+## Analytics, Smartlook,...
 
 
 ========================
@@ -150,9 +201,16 @@ Ale jedna věc, kterou byste neměli zanedbat je bezpečnost.
 
 ???
 
+Dělejte 20p věcí na 80 procent.
+
 ========================
 
 # Tým
+## Kolegové, Konference *(Barcampy)*,
+## Hackathony *(StartupWeekendy)*, Sociální sítě
+
+## ~~Rodina, Přátelé~~
+
 
 ???
 
@@ -163,12 +221,12 @@ Jina schopnost utvořit rychle první verzi a dlouhodobě udržovat běžící v
 
 ========================
 
-# Kontakty, Konference (Barcampy), Hackathony (StartupWeekendy), Sociální sítě
+# Mluvte o svém nápadu!
 
 
 ???
 
-Mluvte o svém nápadu (nebojte se, že vám ho někdo ukradne, naopak se dozvíte mnoho cenných rad a případně se do toho s váma někdo pusti ) 
+nebojte se, že vám ho někdo ukradne, naopak se dozvíte mnoho cenných rad a případně se do toho s váma někdo pusti
 
 Nedělejte to sami. Ale také na 90 na 10 ale spíš 50 na 50.
 
@@ -179,15 +237,12 @@ Doplňte se. Samý programátoři to není dobré.
 
 # MVP
 ## (Minimum viable product)
-# Spusťte první verzi co nejdřív!
+# Spusťte první verzi co **nejdřív**!
 
 
 ???
 
 Prvních několik early adopters. Udělejte rozhovor s uživateli a podívejte se na to, jak to používají. 
-Nastavte měření 
-Analytics, smartlook, 
-
 
 Když produkt rozšiřujete, využijte přátele, rodinu..., ale názor berte s rezervou. 
 
@@ -210,22 +265,13 @@ Když produkt rozšiřujete, využijte přátele, rodinu..., ale názor berte s 
 Nechte lidi zaplatit co nejdříve, aby jste nemeli žádné zákazníky, jen uživatele. 
 To že lidé říkají, že zaplatí, neznamená, že zaplatí. 
 
-
-========================
-
-# Nové featury
-
-
-???
-
-
 Pokud uživatelé něco říkají, neznamená to, že to opravdu chtějí.
 Ptát se radši lidí, co to opravdu využívají, než poslouchat stežovatele.
 
 
 ========================
 
-## Faily
+## **Bugy** a faily
 # Jsou naprosto
 
 ![](/content/drafts/tvorte-uspesny-ne-dokonaly-produkt/ok-fail.png)

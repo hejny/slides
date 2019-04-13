@@ -59,7 +59,7 @@ export async function preprocessRemark(markdown, path, branding) {
 
     slides[0].notes += `
 <hr/>
-To present press [C] and [P];
+To present press [C] and [P] and [F];
 `;
 
     //todo here should be # </🏁Asynchronous JavaScript>
