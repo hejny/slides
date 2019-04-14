@@ -279,5 +279,11 @@ Ptát se radši lidí, co to opravdu využívají, než poslouchat stežovatele.
 
 ???
 
+todos:
+
+Web and mobile disclaimer
+
+
+
 ========================
 
