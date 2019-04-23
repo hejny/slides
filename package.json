@@ -6,7 +6,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "lando start & npm run prettier-watch",
+    "start": "concurrently \"npm run prettier-watch\" \"lando start\"",
     "stop": "lando stop",
     "prettier": "prettier --config .prettierrc --write \"{src,content}/**/*.{js,css,html}\"",
     "prettier-watch": "onchange \"**/*\" -- npm run prettier"
@@ -20,7 +20,8 @@
   "homepage": "https://talks.pavolhejny.com",
   "devDependencies": {
     "@prettier/plugin-php": "github:prettier/plugin-php",
-    "prettier": "github:prettier/prettier",
-    "onchange": "^3.3.0"
+    "concurrently": "^4.1.0",
+    "onchange": "^3.3.0",
+    "prettier": "github:prettier/prettier"
   }
 }
