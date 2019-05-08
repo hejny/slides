@@ -44,7 +44,7 @@ export async function main() {
         }
     }
 
-    let talksHtml= await fetchTalksHtml();
+    let talksHtml = await fetchTalksHtml();
 
     let indexHtml = talksHtml;
 
