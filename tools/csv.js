@@ -1,6 +1,6 @@
 
-export function CSVToObject( strData, strDelimiter ){
-    const array = CSVToArray( strData, strDelimiter  )
+export function CSVToObject( strData, strDelimiter, quote ){
+    const array = CSVToArray( strData, strDelimiter, quote  )
     const [ keys ] = array.splice(0,1);
     const keysObjects = keys.map(key=>key.substr(0,1).toLowerCase()+key.substr(1));
     //console.log('keysObjects',keysObjects);
@@ -26,7 +26,7 @@ export function CSVToObject( strData, strDelimiter ){
     }).filter(row=>row)
 }
 
-export function CSVToArray( strData, strDelimiter = "," ){
+export function CSVToArray( strData, strDelimiter = ",", quote = "\'" ){
 
     // Create a regular expression to parse the CSV values.
     var objPattern = new RegExp(
@@ -35,7 +35,7 @@ export function CSVToArray( strData, strDelimiter = "," ){
             "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
 
             // Quoted fields.
-            "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+            "(?:"+quote+"([^"+quote+"]*(?:"+quote+""+quote+"[^"+quote+"]*)*)"+quote+"|" +
 
             // Standard fields.
             "([^\"\\" + strDelimiter + "\\r\\n]*))"
@@ -85,8 +85,8 @@ export function CSVToArray( strData, strDelimiter = "," ){
             // We found a quoted value. When we capture
             // this value, unescape any double quotes.
             strMatchedValue = arrMatches[ 2 ].replace(
-                new RegExp( "\"\"", "g" ),
-                "\""
+                new RegExp( ""+quote+""+quote+"", "g" ),
+                ""+quote+""
                 );
 
         } else {
