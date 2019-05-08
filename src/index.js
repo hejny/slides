@@ -1,7 +1,8 @@
 import { postprocessRemark } from './postprocessRemark.js';
 import { preprocessRemark } from './preprocessRemark.js';
 import { getParameter } from './getParameter.js';
-import { fetchContentFile, fetchTalk } from './fetchContent.js';
+import { fetchTalk } from './fetchContent.js';
+import { fetchTalksHtml } from './fetchTalksHtml.js';
 
 export async function main() {
     const id = getParameter('id');
@@ -43,18 +44,19 @@ export async function main() {
         }
     }
 
-    let indexMarkdown = await fetchContentFile('index.md');
+    let talksHtml= await fetchTalksHtml();
+
+    let indexHtml = talksHtml;
 
     if (errorMessage) {
-        indexMarkdown = `_${errorMessage}_\n\n${indexMarkdown}`;
+        indexHtml = `_${errorMessage}_\n\n${indexHtml}`;
     }
 
     if (getParameter('xid')) {
         const errorMessage = `This presentation is under construction.`;
-        indexMarkdown = `_${errorMessage}_\n\n${indexMarkdown}`;
+        indexHtml = `_${errorMessage}_\n\n${indexHtml}`;
     }
 
-    let indexHtml = markdown.toHTML(indexMarkdown);
     indexHtml = `<div id="index"><div class="inner">${indexHtml}</div></div>`;
 
     document.getElementById('root').innerHTML = indexHtml;
