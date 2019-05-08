@@ -1,18 +1,21 @@
 # Testovaní v praxi
 
+===
 
 # Technické metriky
 
+===
+
 ## Před nasazením
 
-Test-driven development
-todo 
+### Test-driven development
 
 - Unit testy
 - Integrační testy
 - Automatizované testy v prohlížeči
  - Selenium
 
+===
 
 ## Po nasazení
 
@@ -20,53 +23,90 @@ todo
     - Sentry
 - Http checker
     Hlídá zda je konkrétní stránka dostupná / jak rychle je dostupná.
-    - https://uptimerobot.com
-    - https://www.marketingminer.com/en
+    - uptimerobot.com
+    - marketingminer.com
 
+===
+
+## Prevence 
 
 - Cloudflare
-    -Pro informační weby ideální
+    -Ideální pro statické stránky
+
+===
 
 
 # Chování uživatele na stránce
 
+===
 
 ## Google Analytics
 
+???
 (todo odkaz na lekci co DigiSementr už má)
 (todo, co vše se z něj dá vyčíst)
 
+===
 
 ## Heatmap tools
 
 Na kterou část webu / aplikace uživatel zaměřuje nejvíc pozornost.
 - kam uživatel kliká / kde má uživatel myš
 
-- Fungují pouze z poloviny na dotykových displayích.
-
 - Hotjar
 - Heatmap.com
 - Smartlook
 
+???
+
+
+Fungují pouze z poloviny na dotykových zařízeních.
+
+===
 
 ## Smartlook
 
 Jsou prvky uzpůsobené tak, aby je uživatel našel a pochopil co znamenají?
     - umístění, ikonka, barevnost
 
-
+===
 
 ## AB Testování
 
 - AB testovaní dává smysl pouze pokud už existuje podstaný počet uživatelů (cca todo) - tzn. pro projekty, které právě spouštíte bych ho nedoporučoval.
 - Vždy se testuje 1. konkrétní věc - např. červené vs oranžové tlačítko.
 
+
+???
+
 (todo odkaz na lekci co DigiSementr už má)
 
+
+===
 
 
 # Uživatelské testování
 
 Testování konkrétního scénáře naživo.
+
+
+???
+
+Na ČVUT FIT SAGE lab
 todo fotka z testování
+
+
+
+
+=====
+
+
+todo:
+
+- zmizelá adresa
+- stránka
+
+
+
+
 
