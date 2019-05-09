@@ -8,17 +8,22 @@ export async function fetchTalksHtml() {
 
     const talks = CSVToObject(talksCsv);
 
-    console.log('talks', talks);
+    //console.log('talks', talks);
 
-    return talks
+    const talksToShow = talks
         .filter((talk) => talk.published)
         .sort((talk1, talk2) =>
             valueToDate(talk1.date) < valueToDate(talk2.date) ? 1 : -1,
-        )
+        );
+
+    console.log('talksToShow', talksToShow);
+    console.log(markdown.toHTML(talksToShow[0].description));
+
+    return talksToShow
         .map(
             (talk) =>
                 `
-<a class="talk" href="${talk.presentationURL}" target="_blank">
+<div class="talk">
 
     ${
         !talk.thumbnail
@@ -44,11 +49,16 @@ export async function fetchTalksHtml() {
                       talk.description,
                   )}</p>`
         }
+
+        <a href="${
+            talk.presentationURL
+        }" target="_blank"><button>Prezentace</button></a>
+
     </div>
 
 
    
-</a>
+</div>
 `,
         )
         .join('\n');

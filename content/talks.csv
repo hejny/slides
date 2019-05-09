@@ -74,4 +74,13 @@ Grafová databáze Neo4j,,,Jaro 2018,MeasureCamp,,,,,,,,
 Jak funguje online hra Towns?,,,2015?,ITNetwork,,,,,,http://www.itnetwork.cz/zpravodajstvi/prednasky/jak-funguje-online-hra-towns,,http://www.itnetwork.cz/zpravodajstvi/prednasky/jak-funguje-online-hra-towns
 ẄebAppGames,,,Podzim 2016,GameDevelopersSession,,,,https://www.slideshare.net/PavolHejn/web-app-games,,https://www.itnetwork.cz/javascript/3d-hra/webappgames,,
 ,,,,,,,,,,,,
-Testování v praxi,,TRUE,2019,Digisemestr,,?id=testovani-v-praxi&noBegin=1&noEnd=1#p1,,,,,,
+Testování v praxi,'- [Selenium](https://www.seleniumhq.org/) - Automatické "proklikávání" stránek
+- [Cypress](https://www.cypress.io/) - Automatické "proklikávání" stránek
+- [Sentry](https://sentry.io/) - Trackování chyb
+- [Uptime Robot](https://uptimerobot.com/) - Sledování, zda je stránka funkční
+- [Marketing Miner](https://www.marketingminer.com/) - Komplexní marketingový tool hlídající konkrétní stránky
+- [Cloudflare](https://www.cloudflare.com/) - Služba, která vás dokáže odstínit od obrovských výkyvů návštěvnosti
+- [Google Analytics](https://analytics.google.com/) - Komplexní webová analytika
+- [Hotjar](https://www.hotjar.com) - Nástroj na Heatmapy
+- [Heatmap.com](https://heatmap.com/) - Nástroj na Heatmapy
+- [Smartlook](https://www.smartlook.com/) - Nástroj na nahrávání uživatelů na stránce',TRUE,2019,Digisemestr,,?id=testovani-v-praxi&noBegin=1&noEnd=1#p1,,,,,,

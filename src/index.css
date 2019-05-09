@@ -40,8 +40,6 @@ body {
 
     background-color: #f7720c;
     color: white;
-
-    text-decoration: none;
 }
 
 #index .talk .thumbnail {
@@ -81,6 +79,26 @@ body {
 #index .talk .info p.description {
     /*/
     border: 1px solid red; /**/
+}
+
+#index .talk a {
+    /*/
+    border: 1px solid red; /**/
+
+    color: white;
+}
+
+#index .talk button {
+    /*/
+    border: 1px solid red; /**/
+
+    background-color: white;
+    outline: none;
+    border: none;
+    padding: 6px;
+    font-size: 1.1em;
+    border-radius: 3px;
+    color: #f7720c;
 }
 
 /*===============================================================Remark*/
