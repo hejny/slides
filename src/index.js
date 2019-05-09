@@ -66,5 +66,5 @@ export async function main() {
     indexHtml = `<div id="index"><div class="inner">${indexHtml}</div></div>`;
 
     document.getElementById('root').innerHTML = indexHtml;
-    document.getElementById('source').style.display = 'none';
+    //document.getElementById('source').style.display = 'none';
 }

@@ -1,5 +1,7 @@
 import { fetchContentFile } from './fetchContent.js';
 import { CSVToObject } from '../tools/csv.js';
+import { format } from '../tools/format.js';
+import { valueToDate } from '../tools/stringToValue.js';
 
 export async function fetchTalksHtml() {
     const talksCsv = await fetchContentFile(`talks.csv`);
@@ -10,7 +12,9 @@ export async function fetchTalksHtml() {
 
     return talks
         .filter((talk) => talk.published)
-        .sort((talk1, talk2) => (talk1.date < talk2.date ? 1 : -1))
+        .sort((talk1, talk2) =>
+            valueToDate(talk1.date) < valueToDate(talk2.date) ? 1 : -1,
+        )
         .map(
             (talk) =>
                 `
@@ -26,11 +30,12 @@ export async function fetchTalksHtml() {
 
     <div class="info">
         <h1 class="name">${talk.name}</h1>
-        <h2><span class="date"> ${formatDate(
-            talk.date,
-        )}</span> | <span class="event">${
-                    talk.event
-                }</span> | <span class="city">${talk.city}</span></h2>
+        <h2>
+            ${[talk.date, talk.event, talk.city]
+                .filter((v) => v)
+                .map((v) => `<span>${format(v)}</span>`)
+                .join(' | ')}
+        </h2>
 
         ${
             !talk.description
@@ -47,8 +52,4 @@ export async function fetchTalksHtml() {
 `,
         )
         .join('\n');
-}
-
-function formatDate(date) {
-    return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
 }
