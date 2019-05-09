@@ -1,4 +1,4 @@
-import { stringToValue } from "./stringToValue";
+import { stringToValue } from "./stringToValue.js";
 
 export function CSVToObject( strData, strDelimiter, quote ){
     const array = CSVToArray( strData, strDelimiter, quote  )
