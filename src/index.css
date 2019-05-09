@@ -40,6 +40,8 @@ body {
 
     background-color: #f7720c;
     color: white;
+
+    text-decoration: none;
 }
 
 #index .talk .thumbnail {

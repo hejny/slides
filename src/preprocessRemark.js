@@ -2,6 +2,8 @@
 //todo product placements
 
 export async function preprocessRemark(markdown, path, branding) {
+    console.log('branding', branding);
+
     markdown = markdown.split(/(-|=){3,}/gm).join('---');
 
     markdown = (await Promise.all(
@@ -43,40 +45,45 @@ export async function preprocessRemark(markdown, path, branding) {
         return { screen, notes };
     });
 
-    console.log(slides);
+    //console.log(slides);
 
     const normalizedLocation = window.location.toString();
-    slides[0].screen += `
+
+    if (!branding.noBegin) {
+        slides[0].screen += `
 
 
 ![](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=${encodeURIComponent(
-        normalizedLocation,
-    )})
+            normalizedLocation,
+        )})
 
 <div class="qr-caption"><a href="https://talks.pavolhejny.com/">talks.pavolhejny.com</a></div>
 <footer>${branding.event}</footer>
 `;
 
-    slides[0].notes += `
+        slides[0].notes += `
 <hr/>
 To present press [C] and [P] and [F];
 `;
+    }
 
-    //todo here should be # </🏁Asynchronous JavaScript>
-    const lastSlide = slides[slides.length - 1];
-    lastSlide.screen = `
+    if (!branding.noEnd) {
+        //todo here should be # </🏁Asynchronous JavaScript>
+        const lastSlide = slides[slides.length - 1];
+        lastSlide.screen = `
 
 # </🏁Talk is="over">
 
 ![](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=${encodeURIComponent(
-        normalizedLocation,
-    )}})
+            normalizedLocation,
+        )}})
 
 <div class="qr-caption"><a href="https://talks.pavolhejny.com/">talks.pavolhejny.com</a></div>
 
     ${lastSlide.screen}
 
 `;
+    }
 
     markdown = slides
         .map((slide) => `${slide.screen}\n???\n${slide.notes}`)

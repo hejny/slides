@@ -18,6 +18,8 @@ export async function main() {
                     .splice(0, 2)
                     .join('/')}`,
                 {
+                    noBegin: !!getParameter('noBegin'),
+                    noEnd: !!getParameter('noEnd'),
                     event: getParameter('event'),
                 },
             );
