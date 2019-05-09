@@ -25,9 +25,78 @@ body {
     text-align: left;
 }
 
-#index a {
+#index .header h1,
+#index .header h1 a {
+    font-size: 3rem;
+    color: #f7720c;
+}
+
+#index .talk {
+    /*/
+    border: 1px solid red; /**/
+
+    display: flex;
+    margin-top: 10px;
+
+    background-color: #f7720c;
+    color: white;
+}
+
+#index .talk .thumbnail {
+    /*/
+    border: 1px solid red; /**/
+
+    vertical-align: top;
+
+    width: 400px;
+}
+
+#index .talk .info {
+    /*/
+    border: 1px solid red; /**/
+
+    vertical-align: top;
+
+    width: 400px;
+    padding: 10px;
+}
+
+#index .talk .info h1 {
+    /*/
+    border: 1px solid red; /**/
+
+    margin: 0;
+}
+
+#index .talk .info h2 {
+    /*/
+    border: 1px solid red; /**/
+
+    margin: 0;
     font-size: 1.2em;
 }
+
+#index .talk .info h2 .date {
+    /*/
+    border: 1px solid red; /**/
+}
+
+#index .talk .info h2 .event {
+    /*/
+    border: 1px solid red; /**/
+}
+
+#index .talk .info h2 .city {
+    /*/
+    border: 1px solid red; /**/
+}
+
+#index .talk .info p.description {
+    /*/
+    border: 1px solid red; /**/
+}
+
+/*===============================================================Remark*/
 
 .remark-slides-area {
     background-color: black;
