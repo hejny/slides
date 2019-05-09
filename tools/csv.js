@@ -13,7 +13,8 @@ export function CSVToObject( strData, strDelimiter, quote ){
             let value = rowArray[i];
 
             if(value==='')value=null
-            else if(!isNaN(parseFloat(value)))value=parseFloat(value)
+            else if(/^\-?\d+(\.\d+)?$/g.test(value))value=parseFloat(value)
+            else if(/^\d{4}\-\d{1,2}\-\d{1,2}$/g.test(value))value=new Date(value)
             else if(value.toLowerCase()==='true')value=true
             else if(value.toLowerCase()==='false')value=false
             

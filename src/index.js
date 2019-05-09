@@ -46,15 +46,21 @@ export async function main() {
 
     let talksHtml = await fetchTalksHtml();
 
-    let indexHtml = talksHtml;
+    let indexHtml = `
+    <div class="header">
+    <h1><a href="https://www.pavolhejny.com">Pavol Hejný</a> talks</h1>
+    </div>
+    
+    ${talksHtml}
+    `;
 
     if (errorMessage) {
-        indexHtml = `_${errorMessage}_\n\n${indexHtml}`;
+        indexHtml = `<div class="message error">${errorMessage}</div>${indexHtml}`;
     }
 
     if (getParameter('xid')) {
         const errorMessage = `This presentation is under construction.`;
-        indexHtml = `_${errorMessage}_\n\n${indexHtml}`;
+        indexHtml = `<div class="message warning">${errorMessage}</div>${indexHtml}`;
     }
 
     indexHtml = `<div id="index"><div class="inner">${indexHtml}</div></div>`;
