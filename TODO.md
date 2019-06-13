@@ -31,3 +31,4 @@ Add content and presentations from previous years
 - [] Connect with pavolhejny.com
 - [] Connect with csv file
 - [] Make csv file external https://stackoverflow.com/questions/37705553/how-to-export-a-csv-from-google-sheet-api
+- [] Use JS server instead of LANDO DEV
