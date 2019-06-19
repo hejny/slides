@@ -6,8 +6,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "lando start",
-    "stop": "lando stop",
+    "start": "npm run server",
+    "server": "node server.js",
     "prettier": "prettier --config .prettierrc --write \"{src,content}/**/*.{js,css,html}\"",
     "prettier-watch": "onchange \"**/*\" -- npm run prettier"
   },
@@ -21,6 +21,9 @@
   "devDependencies": {
     "@prettier/plugin-php": "github:prettier/plugin-php",
     "onchange": "^3.3.0",
-    "prettier": "github:prettier/prettier"
+    "prettier": "github:prettier/prettier",
+    "express": "^4.16.3",
+    "serve-static": "^1.13.2",
+    "serve-index": "^1.9.1"
   }
 }

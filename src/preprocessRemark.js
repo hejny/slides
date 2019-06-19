@@ -85,9 +85,16 @@ To present press [C] and [P] and [F];
 `;
     }
 
+    console.log('slides',slides);
+
     markdown = slides
-        .map((slide) => `${slide.screen}\n???\n${slide.notes}`)
-        .join('---');
+        .map((slide) => `${slide.screen}\n\n\n`)//TODO: ???\n${slide.notes}
+        .join('---')
+        .split(`----`)
+        .join('')
+        ;
+
+    console.log('markdown',markdown);
 
     return markdown;
 }
