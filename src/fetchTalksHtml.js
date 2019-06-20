@@ -28,9 +28,7 @@ export async function fetchTalksHtml() {
     ${
         !talk.thumbnail
             ? '<div class="thumbnail empty"></div>'
-            : `<div class="thumbnail" style="background: url(${
-                  talk.thumbnail
-              }); background-size: contain;background-repeat: no-repeat;background-position: top center;"></div>`
+            : `<div class="thumbnail" style="background: url(${talk.thumbnail}); background-size: contain;background-repeat: no-repeat;background-position: top center;"></div>`
     }
 
     <div class="info">

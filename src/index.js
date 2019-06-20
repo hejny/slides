@@ -1,8 +1,7 @@
+import { fetchTalk } from './fetchContent.js';
+import { getParameter } from './getParameter.js';
 import { postprocessRemark } from './postprocessRemark.js';
 import { preprocessRemark } from './preprocessRemark.js';
-import { getParameter } from './getParameter.js';
-import { fetchTalk } from './fetchContent.js';
-import { fetchTalksHtml } from './fetchTalksHtml.js';
 
 export async function main() {
     const id = getParameter('id');
@@ -46,27 +45,21 @@ export async function main() {
         }
     }
 
-    let talksHtml = await fetchTalksHtml();
+    let indexHtml = '';
 
-    let indexHtml = `
-    <div class="header">
-    <h1><a href="https://www.pavolhejny.com">Pavol Hejný</a> talks</h1>
-    </div>
-    
-    ${talksHtml}
-    `;
+    if (getParameter('xid')) {
+        errorMessage = `This presentation is under construction.`;
+    }
 
     if (errorMessage) {
         indexHtml = `<div class="message error">${errorMessage}</div>${indexHtml}`;
     }
 
-    if (getParameter('xid')) {
-        const errorMessage = `This presentation is under construction.`;
-        indexHtml = `<div class="message warning">${errorMessage}</div>${indexHtml}`;
-    }
-
     indexHtml = `<div id="index"><div class="inner">${indexHtml}</div></div>`;
 
     document.getElementById('root').innerHTML = indexHtml;
-    //document.getElementById('source').style.display = 'none';
+
+    if (!errorMessage) {
+        window.location = 'https://talks.pavolhejny.com';
+    }
 }
