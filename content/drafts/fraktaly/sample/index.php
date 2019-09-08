@@ -1,4 +1,12 @@
 <?php
+
+/**
+ * @deprecated since 2019-09-01
+ *
+ * This code is deprecated! Use Composer package:
+ * @see https://github.com/mathematicator-core/mandelbrot-set
+ */
+
 //==============================================================================================Konfigurace
 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_WARNING );
 ini_set("max_execution_time","100000");
