@@ -16,7 +16,7 @@
     "url": "git+ssh://git@github.com:hejny/talks.git"
   },
   "author": "Pavol Hejný",
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://talks.pavolhejny.com",
   "devDependencies": {
     "@prettier/plugin-php": "github:prettier/plugin-php",
