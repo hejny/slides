@@ -20,10 +20,10 @@
   "homepage": "https://talks.pavolhejny.com",
   "devDependencies": {
     "@prettier/plugin-php": "github:prettier/plugin-php",
-    "onchange": "^3.3.0",
+    "onchange": "3.3.0",
     "prettier": "github:prettier/prettier",
-    "express": "^4.16.3",
-    "serve-static": "^1.13.2",
-    "serve-index": "^1.9.1"
+    "express": "4.16.3",
+    "serve-static": "1.13.2",
+    "serve-index": "1.9.1"
   }
 }
