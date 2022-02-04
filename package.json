@@ -1,7 +1,7 @@
 {
   "name": "talks",
   "version": "0.1.0",
-  "description": "Presentations for my (me@pavolhejny.com) talks on conferences and meetups.",
+  "description": "Presentations for my talks on conferences and meetups.",
   "directories": {
     "lib": "lib"
   },
