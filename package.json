@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:hejny/talks.git"
+    "url": "https://github.com/hejny/slides"
   },
   "author": "Pavol Hejný",
   "license": "SEE LICENSE IN LICENSE",
