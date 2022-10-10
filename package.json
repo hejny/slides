@@ -19,9 +19,9 @@
     "license": "SEE LICENSE IN LICENSE",
     "homepage": "https://talks.pavolhejny.com",
     "devDependencies": {
-        "@prettier/plugin-php": "github:prettier/plugin-php",
+        "@prettier/plugin-php": "0.19.1",
         "onchange": "3.3.0",
-        "prettier": "github:prettier/prettier",
+        "prettier": "2.7.1",
         "express": "4.16.3",
         "serve-static": "1.13.2",
         "serve-index": "1.9.1"
