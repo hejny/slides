@@ -25,5 +25,15 @@
         "express": "4.16.3",
         "serve-static": "1.13.2",
         "serve-index": "1.9.1"
-    }
+    },
+    "funding": [
+        {
+            "type": "individual",
+            "url": "https://buymeacoffee.com/hejny"
+        },
+        {
+            "type": "github",
+            "url": "https://github.com/hejny/slides/blob/main/README.md#%EF%B8%8F-contributing"
+        }
+    ]
 }
