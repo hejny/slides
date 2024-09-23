@@ -16,7 +16,7 @@
         "url": "https://github.com/hejny/slides"
     },
     "author": "Pavol Hejný",
-    "license": "SEE LICENSE IN LICENSE",
+    "license": "Apache-2.0",
     "homepage": "https://talks.pavolhejny.com",
     "devDependencies": {
         "@prettier/plugin-php": "0.19.1",
