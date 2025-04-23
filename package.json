@@ -1,6 +1,6 @@
 {
     "name": "talks",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "description": "Presentations for my talks on conferences and meetups.",
     "directories": {
         "lib": "lib"
